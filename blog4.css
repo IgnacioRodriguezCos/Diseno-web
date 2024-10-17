@@ -1,0 +1,64 @@
+body{
+    background-color: rgb(231, 204, 170);
+    padding-left: 5%;
+}
+
+.titulo{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    letter-spacing: 2px;
+}
+
+.foto{
+    width: 400px;
+    height: 400px; 
+    object-fit: cover; 
+    transition: transform 0.3s ease;
+}
+
+.foto:hover{
+    transform: translateY(-2px) scale(1.04);
+}
+td {
+    vertical-align: top; 
+    min-height: 200px; 
+}
+
+.texto {
+    width: 400px; 
+    word-wrap: break-word; 
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight:bolder
+}
+
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 10px;
+}
+
+.izquierda {
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    text-decoration: none;
+}
+
+.centro {
+    text-align: center;
+    flex: 1;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    text-decoration: none;
+}
+
+.derecha {
+    text-align: right;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    text-decoration: none;
+    padding-right:7% ;
+}

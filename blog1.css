@@ -1,0 +1,53 @@
+body{
+    background-image: url(fondo-blog1.png);
+}
+.contenedor{
+    padding-left: 33%;
+    padding-right: 33%;
+    padding-top: 2%;
+}
+
+.foto{
+    width: 99%;
+    border-radius: 10%;
+}
+
+.titulo{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(63, 211, 161);
+}
+
+.parrafo{
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(47, 146, 113);
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 10px;
+}
+
+
+.izquierda {
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(47, 146, 113);
+    text-decoration: none;
+}
+
+.centro {
+    text-align: center;
+    flex: 1;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(47, 146, 113);
+    text-decoration: none;
+}
+
+.derecha {
+    text-align: right;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(47, 146, 113);
+    text-decoration: none;
+}

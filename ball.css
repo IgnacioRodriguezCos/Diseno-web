@@ -1,0 +1,43 @@
+.ball {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0% {
+        left: 0;
+        bottom: 0;
+    }
+    25% {
+        left: 25%;
+        bottom: 100px;
+    }
+    50% {
+        left: 50%;
+        bottom: 0;
+    }
+    75% {
+        left: 75%;
+        bottom: 100px;
+    }
+    100% {
+        left: 100%;
+        bottom:0;
+    }
+}
+
+.contenedor{
+    text-align: center; 
+    padding-top: 20%;
+}
+
+.centro{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: red;
+    text-decoration: none;
+    font-size: 40px;
+}

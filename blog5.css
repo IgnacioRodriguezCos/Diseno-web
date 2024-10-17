@@ -1,0 +1,86 @@
+body{
+    background-image: url(kamino2.avif);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.contenedor{
+    padding-left: 33%;
+    padding-right: 33%;
+    padding-top:10%;
+}
+
+.titulo{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    font-size: 100px;
+    text-align: center;
+    text-shadow: -1px -1px 0 black,  
+    1px -1px 0 black,  
+    -1px 1px 0 black,  
+    1px 1px 0 black;
+}
+
+.titulo2{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    font-size: 80px;
+    text-align: left;
+    text-shadow: -1px -1px 0 black,  
+    1px -1px 0 black,  
+    -1px 1px 0 black,  
+    1px 1px 0 black;
+}
+
+.texto{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    font-size: 20px;
+    text-align: left;
+    text-shadow: -1px -1px 0 black,  
+    1px -1px 0 black,  
+    -1px 1px 0 black,  
+    1px 1px 0 black;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 10px;
+}
+
+.izquierda {
+    text-align: left;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    text-decoration: none;
+    text-shadow: -1px -1px 0 black,  
+    1px -1px 0 black,  
+    -1px 1px 0 black,  
+    1px 1px 0 black;
+}
+
+.centro {
+    text-align: center;
+    flex: 1;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    text-decoration: none;
+    text-shadow: -1px -1px 0 black,  
+    1px -1px 0 black,  
+    -1px 1px 0 black,  
+    1px 1px 0 black;
+}
+
+.derecha {
+    text-align: right;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    text-decoration: none;
+    padding-right:7% ;
+    text-shadow: -1px -1px 0 black,  
+    1px -1px 0 black,  
+    -1px 1px 0 black,  
+    1px 1px 0 black;
+}
