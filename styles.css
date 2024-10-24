@@ -54,7 +54,7 @@ h2 {
     border-radius: 25px;
     position: relative;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* Transición suave */
 }
 
 .boton:hover {
@@ -82,11 +82,10 @@ h2 {
 }
 
 .link-boton {
-    color: inherit;
-    position: relative; 
+    position: relative; /* Cambiar a relativo */
     top: 50%;
     transform: translateY(-50%);
-    display: inline-block; 
+    display: inline-block; /* Esto permitirá centrar el texto adecuadamente */
     text-align: center;
     text-decoration: none;
 }

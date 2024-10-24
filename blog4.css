@@ -27,9 +27,16 @@ td {
 .texto {
     width: 400px; 
     word-wrap: break-word; 
-    padding: 10px;
+    padding-right: 10px;
     font-family: 'Courier New', Courier, monospace;
-    font-weight:bolder
+    font-weight: bolder;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.3s ease;
+}
+
+.texto:hover{
+    transform: translateY(-2px) scale(1.04);
 }
 
 
