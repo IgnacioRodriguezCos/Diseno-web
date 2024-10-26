@@ -10,6 +10,10 @@ body{
     text-decoration: none;
 }
 
+.foto{
+    
+    width: 20%;
+}
 .contenedor {
     display: flex;
     justify-content: space-between;
@@ -32,6 +36,7 @@ body{
     max-width: 100%;
     height: auto;
 }
+
 
 .derecha{
     text-align: left;

@@ -1,0 +1,40 @@
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+
+img {
+    width: 80%;
+    height: auto;
+    display: block;
+}
+
+
+footer {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    background-color: #333; 
+    color: white; 
+    text-align: center; 
+    padding: 34px 0; 
+}
+
+footer p {
+    display: inline-block; 
+    margin: 0 15px; 
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+}
+
+footer a {
+    color: white; 
+    text-decoration: none; 
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,59 @@
+body {
+    background-image: url(https://img.wonderhowto.com/img/74/37/63460668996878/0/minecraft-worlds-ultimate-survival-guide-part-5.w1456.jpg);
+    background-size: cover;
+    padding-top: 10%;
+}
+
+.pixel-art-table {
+    border-spacing: 0;
+}
+
+.pixel {
+    width: 70px;
+    height: 70px;
+}
+
+.green {
+    background-color: green;
+}
+
+.black {
+    background-color: black;
+}
+
+.link {
+    color: white;
+    text-align: center;
+}
+
+.link a {
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    background-color: #333; 
+    color: white; 
+    text-align: center; 
+    padding: 34px 0; 
+}
+
+footer p {
+    display: inline-block; 
+    margin: 0 15px; 
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+}
+
+footer a {
+    color: white; 
+    text-decoration: none; 
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

@@ -1,92 +1,112 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
+    background-color:rgb(100, 10, 4);
 }
 
-html {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 16px;
-    text-align: center;
-    display: inline-block;
-    background-image: url(fondo-coruscant-a.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
+.logo {
+    width: 150px;
 }
 
-.pfp{
-    height: 15%;
-    width: 15%;
-    border-radius: 50%;
-    padding: 2%;
+.main-table {
+    width: 800px;
+    height: 400px;
 }
-h1 {
-    font-size: 16px;
+
+.profile-pic {
+    height: 400px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.info-section {
+    background-color: rgb(12, 17, 92);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
     color: white;
-    text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
-
+    padding: 20px;
+    text-align: left;
 }
 
-h2 {
-    font-size: 12px;
-    font-weight: 700;
+.info-section h1 {
     color: white;
-    text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
-
 }
 
-.logos{
-    padding: 1%;
-    cursor: pointer;
-    transition: transform 0.3s ease; /* Transición suave */
+.info-section p {
+    color: darkgray;
 }
 
-.logos:hover{
-    transform: translateY(-2px) scale(1.04);
+.favorites-table {
+    width: 800px;
+    border-collapse: collapse;
+    padding: 10px;
 }
 
-
-.boton {
-    background-color: rgb(187, 190, 187);
-    height: 50px;
-    width: 25vw;
-    margin: 0 auto 10px;
-    border-radius: 25px;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s ease; /* Transición suave */
-}
-
-.boton:hover {
-    transform: translateY(-2px) scale(1.04);
-}
-
-.img-boton {
-    left: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 41px;
-    height: 41px;
-    background-color: blue;
-    border-radius: 50%;
-    /* top: 10px; */
-
-    position: absolute;
-}
-
-.compartir {
-    position: absolute;
-    right: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.link-boton {
-    position: relative; /* Cambiar a relativo */
-    top: 50%;
-    transform: translateY(-50%);
-    display: inline-block; /* Esto permitirá centrar el texto adecuadamente */
+.favorites-header {
+    border-bottom: 3px solid rgb(255, 255, 255);
+    color: white;
     text-align: center;
+}
+
+.favorites-link {
+    border: 3px solid white;
+    color: white;
+    text-align: center;
+}
+
+.favorites-link a {
+    color: white;
     text-decoration: none;
 }
+
+
+.icon-cell {
+    padding: 10px;
+}
+
+.icon {
+    width: 100px;
+}
+
+.juego a {
+    color: white;
+    text-decoration: none;
+}
+
+.tipografia a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+footer {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    background-color: #333; 
+    color: white; 
+    text-align: center; 
+    padding: 34px 0; 
+}
+
+footer p {
+    display: inline-block; 
+    margin: 0 15px; 
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+}
+
+footer a {
+    color: white; 
+    text-decoration: none; 
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+
 
