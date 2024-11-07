@@ -1,5 +1,5 @@
 body {
-    background-color: c1121f; 
+    background-color: #c1121f; 
 }
 
 .logo {
@@ -18,7 +18,7 @@ body {
 }
 
 .info-section {
-    background-color: 003049;
+    background-color: #003049;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     color: white;
@@ -41,7 +41,7 @@ body {
 }
 
 .favorites-header {
-    border-bottom: 3px solid 780000;
+    border-bottom: 3px solid #780000;
     color: white;
     text-align: center;
 }
