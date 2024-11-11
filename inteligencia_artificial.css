@@ -1,0 +1,45 @@
+body{
+    background-color: rgb(112, 236, 195);
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.titulo{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.foto{
+    
+    width: 20%;
+}
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+} 
+
+.tabla{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.izquierda {
+    margin-top: 3.8%;
+    text-align: right;
+    width: 40%;
+    padding-right: 3%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.izquierda img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.derecha{
+    text-align: left;
+    width: 60%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
