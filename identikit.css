@@ -21,13 +21,13 @@ body {
     background-color: #003049;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    color: white;
+    color: #fdf0d5;
     padding: 20px;
     text-align: left;
 }
 
 .info-section h1 {
-    color: white;
+    color: #fdf0d5;
 }
 
 .info-section p {
@@ -38,22 +38,23 @@ body {
     width: 800px;
     border-collapse: collapse;
     padding: 10px;
+    
 }
 
 .favorites-header {
-    border-bottom: 3px solid #780000;
-    color: white;
+    border-bottom: 3px solid #fdf0d5;
+    color: #fdf0d5;
     text-align: center;
 }
 
 .favorites-link {
-    border: 3px solid white;
-    color: white;
+    border: 3px solid #fdf0d5;
+    color: #fdf0d5;
     text-align: center;
 }
 
 .favorites-link a {
-    color: white;
+    color: #fdf0d5;
     text-decoration: none;
 }
 
@@ -67,12 +68,12 @@ body {
 }
 
 .juego a {
-    color: white;
+    color: #fdf0d5;
     text-decoration: none;
 }
 
 .tipografia a {
-    color: white;
+    color: #fdf0d5;
     text-decoration: none;
 }
 
@@ -84,8 +85,8 @@ footer {
     top: 0; 
     left: 0;
     width: 100%;
-    background-color: #333; 
-    color: white; 
+    background-color: #780000; 
+    color: #fdf0d5; 
     text-align: center; 
     padding: 34px 0; 
 }
@@ -94,11 +95,11 @@ footer p {
     display: inline-block; 
     margin: 0 15px; 
     font-size: 20px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 footer a {
-    color: white; 
+    color: #fdf0d5; 
     text-decoration: none; 
 }
 
