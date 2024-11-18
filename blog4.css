@@ -1,6 +1,20 @@
+html {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.navbar a:hover {
+    background-color: #dd0000;
+}
+
+.foto:hover {
+    opacity: 0.8;
+    fill-opacity: #red;
+}
+
+
 body {
     background-color: rgb(212, 19, 19);
-    padding-left: 5%;
 }
 
 .container {
@@ -50,6 +64,7 @@ body {
     object-fit: cover; 
 }
 
+
 .navbar {
     display: flex;
     flex-wrap: wrap; 
@@ -69,6 +84,8 @@ body {
     padding: 5px 0;
 }
 
+
+
 .izquierda {
     text-align: left;
 }
@@ -87,6 +104,7 @@ body {
     background-color: #333;
     color: white;
     font-family: 'Courier New', Courier, monospace;
+    margin-top: 20px;
 }
 
 @media (max-width: 768px) {
