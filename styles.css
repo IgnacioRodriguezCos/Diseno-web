@@ -4,126 +4,76 @@
     box-sizing: border-box;  
 }  
   
-html {  
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  
-    font-size: 20px;  
-    text-align: center;  
-    background-image: url(fondo-coruscant-a.jpg);  
-    background-size: cover;  
-    background-repeat: no-repeat;  
-    background-attachment: fixed;  
-}  
-  
-body {  
-    display: flex;  
-    flex-direction: column;  
-    align-items: center;  
-    justify-content: center;  
-    min-height: 100vh;  
-    padding: 20px;  
-}  
-  
-.pfp {  
-    height: 15%;  
-    width: 15%;  
-    max-width: 150px; /* Nueva regla para limitar el tamaño en pantallas grandes */  
-    border-radius: 50%;  
-    padding: 2%;  
-}  
-  
-h1 {  
-    font-size: 2em;  
-    color: white;  
-    text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;  
-    margin: 10px 0;  
-}  
-  
-h2 {  
-    font-size: 1.5em;  
-    font-weight: 700;  
-    color: white;  
-    text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;  
-    margin: 10px 0;  
-}  
-  
-.logos {  
-    padding: 1%;  
-    cursor: pointer;  
-    transition: transform 0.3s ease;  
-}  
-  
-.logos:hover {  
-    transform: translateY(-2px) scale(1.04);  
-}  
-  
-.boton {  
-    background-color: rgb(187, 190, 187);  
-    height: 50px;  
-    width: 80%;  
-    max-width: 400px; /* Nueva regla para limitar el tamaño en pantallas grandes */  
-    margin: 10px auto;  
-    border-radius: 25px;  
-    position: relative;  
-    cursor: pointer;  
-    transition: transform 0.3s ease;  
-    display: flex;  
-    align-items: center;  
-    justify-content: center;  
-}  
-  
-.boton:hover {  
-    transform: translateY(-2px) scale(1.04);  
-}  
-  
-.img-boton {  
-    width: 41px;  
-    height: 41px;  
-    background-color: blue;  
-    border-radius: 50%;  
-    margin-right: 10px;  
-}  
-  
-.link-boton {  
-    text-decoration: none;  
-    color: white;  
-    font-size: 1em;  
-}  
-  
-/* Media Queries para diferentes tamaños de pantalla */  
-@media (max-width: 768px) {  
-    html {  
-        font-size: 18px;  
-    }  
-  
-    .pfp {  
-        width: 25%;  
-        height: auto;  
-    }  
-  
-    h1 {  
-        font-size: 1.8em;  
-    }  
-  
-    h2 {  
-        font-size: 1.2em;  
-    }  
-}  
-  
-@media (max-width: 480px) {  
-    html {  
-        font-size: 16px;  
-    }  
-  
-    .pfp {  
-        width: 35%;  
-        height: auto;  
-    }  
-  
-    h1 {  
-        font-size: 1.5em;  
-    }  
-  
-    h2 {  
-        font-size: 1em;  
-    }  
+html {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    display: inline-block;
+    background-image: url(fondo-coruscant-a.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.pfp{
+    height: 15%;
+    width: 15%;
+    border-radius: 50%;
+    padding: 2%;
+}
+h1 {
+    font-size: 30px;
+    color: white;
+    text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
+h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
+.logos{
+    padding: 1%;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Transición suave */
+}
+.logos:hover{
+    transform: translateY(-2px) scale(1.04);
+}
+.boton {
+    background-color: rgb(187, 190, 187);
+    height: 50px;
+    width: 25vw;
+    margin: 0 auto 10px;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Transición suave */
+}
+.boton:hover {
+    transform: translateY(-2px) scale(1.04);
+}
+.img-boton {
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 41px;
+    height: 41px;
+    background-color: blue;
+    border-radius: 50%;
+    /* top: 10px; */
+    position: absolute;
+}
+.compartir {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.link-boton {
+    position: relative; 
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block; 
+    text-align: center;
+    text-decoration: none;
+    color: white;
 }
