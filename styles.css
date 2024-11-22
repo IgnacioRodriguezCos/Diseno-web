@@ -9,9 +9,10 @@ html {
     font-size: 20px;
     text-align: center;
     display: inline-block;
-    background-image: url(fondo-coruscant-a.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
+    background-image: url(fondo-coruscant-a.jpg);  
+    background-size: cover;  
+    background-repeat: no-repeat;  
+    background-attachment: fixed;
 }
 .pfp{
     height: 15%;
