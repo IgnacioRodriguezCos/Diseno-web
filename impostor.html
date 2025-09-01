@@ -98,6 +98,7 @@
     </label><br><br>
     <label>Tema:
       <select id="tema">
+        <option value="jugadores_futbol">Jugadores de Fútbol</option>
         <option value="futbol">Fútbol</option>
         <option value="animales">Animales</option>
         <option value="comida">Comida</option>
@@ -126,6 +127,29 @@
     let actual = 1;
 
     const palabrasPorTema = {
+      jugadores_futbol: [
+  "Lionel Messi", "Cristiano Ronaldo", "Diego Maradona", "Pelé", "Zinedine Zidane",
+  "Johan Cruyff", "Franz Beckenbauer", "Ferenc Puskás", "Ronaldo", "Gerd Müller",
+  "Alfredo Di Stéfano", "Michel Platini", "Xavi", "Andrés Iniesta", "Kylian Mbappé",
+  "Neymar Jr.", "Robert Lewandowski", "Manuel Neuer", "Paolo Maldini", "Harry Kane",
+  "Luis Suárez", "Karim Benzema", "Gavi", "Pedri", "Vinícius Júnior",
+  "Erling Haaland", "Kevin De Bruyne", "Jude Bellingham", "Marcus Rashford", "Phil Foden",
+  "Bukayo Saka", "Romelu Lukaku", "Sadio Mané", "Rodri", "Jamal Musiala",
+  "N’Golo Kanté", "Trent Alexander-Arnold", "Gabriel Jesus", "Raheem Sterling", "Casemiro",
+  "Toni Kroos", "Luka Modrić", "Sergio Ramos", "Gianluigi Buffon", "Thierry Henry",
+  "Bobby Charlton", "Ronaldinho", "Rivaldo", "Gheorghe Hagi", "Mario Kempes",
+  "Teófilo Cubillas", "Giuseppe Meazza", "Franco Baresi", "Marco van Basten", "Eusébio",
+  "George Best", "Ronaldo (fenómeno)", "Roberto Baggio", "Lev Yashin", "Dino Zoff",
+  "Ruud Gullit", "Frank Rijkaard", "Paolo Rossi", "Omar Sivori", "Hugo Sánchez",
+  "Jairzinho", "Socrates", "Kenny Dalglish", "Lothar Matthäus", "Ronald Koeman",
+  "Kaka", "Javier Zanetti", "Dennis Bergkamp", "Roberto Carlos", "Philipp Lahm",
+  "Xabi Alonso", "Luis Figo", "Cafu", "Eric Cantona", "Michael Laudrup",
+  "Rivellino", "Didi", "Carlos Alberto", "Jairzinho", "Gunnar Nordahl",
+  "Wayne Rooney", "Peter Schmeichel", "George Weah", "Gianluigi Buffon", "Juan Alberto Schiaffino",
+  "Zico", "Bobby Moore", "Karl-Heinz Rummenigge", "Gunnar Nordahl", "José Manuel Moreno",
+  "Dino Zoff", "Roger Milla", "Alan Shearer", "Arsène Wenger"
+],
+
       futbol: ["Messi", "Pelota", "Gol", "Arco", "Camiseta", "Maradona", "Cancha", "Árbitro", "Mundial", "Corner"],
       animales: ["Perro", "Gato", "Elefante", "León", "Tigre", "Jirafa", "Mono", "Oso", "Caballo", "Panda"],
       comida: ["Pizza", "Hamburguesa", "Sushi", "Empanada", "Taco", "Helado", "Milanesa", "Asado", "Paella", "Arepa"],
@@ -182,3 +206,4 @@
   </script>
 </body>
 </html>
+
