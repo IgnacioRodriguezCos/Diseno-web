@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego del Impostor</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin: 30px 0;
+      font-size: 2.5rem;
+    }
+
+    #config, #juego {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      max-width: 400px;
+      width: 90%;
+      margin-bottom: 20px;
+    }
+
+    #juego { display: none; }
+
+    label, select, input { 
+      font-size: 1rem; 
+      margin: 10px 0; 
+      color:  #667eea; 
+      font-weight: 600;
+    }
+
+    input, select {
+      padding: 8px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      width: 100%;
+      margin-top: 5px;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-top: 15px;
+      background: #ff6f61;
+      color: #fff;
+      font-weight: bold;
+      transition: background 0.3s;
+      width: 100%;
+    }
+
+    button:hover {
+      background: #ff3b2e;
+    }
+
+    #palabra {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 20px 0;
+      color: #ffeb3b;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.2rem; }
+      #palabra { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Juego del Impostor</h1>
+
+  <div id="config">
+    <label>Cantidad de jugadores:
+      <input type="number" id="numJugadores" min="3">
+    </label><br><br>
+    <label>Tema:
+      <select id="tema">
+        <option value="futbol">Fútbol</option>
+        <option value="animales">Animales</option>
+        <option value="comida">Comida</option>
+        <option value="paises">Países</option>
+        <option value="colores">Colores</option>
+        <option value="objetos">Objetos</option>
+        <option value="cine">Cine</option>
+        <option value="musica">Música</option>
+        <option value="tecnologia">Tecnología</option>
+      </select>
+    </label><br><br>
+    <button onclick="iniciarJuego()">Iniciar Juego</button>
+  </div>
+
+  <div id="juego">
+    <h2>Jugador <span id="jugadorActual">1</span></h2>
+    <div id="palabra"></div>
+    <button id="btnVer" onclick="mostrarPalabra()">Ver palabra</button>
+    <button id="btnSiguiente" onclick="siguienteJugador()" style="display:none">Siguiente jugador</button>
+  </div>
+
+  <script>
+    let jugadores = 0;
+    let palabra = "";
+    let impostor = 0;
+    let actual = 1;
+
+    const palabrasPorTema = {
+      futbol: ["Messi", "Pelota", "Gol", "Arco", "Camiseta", "Maradona", "Cancha", "Árbitro", "Mundial", "Corner"],
+      animales: ["Perro", "Gato", "Elefante", "León", "Tigre", "Jirafa", "Mono", "Oso", "Caballo", "Panda"],
+      comida: ["Pizza", "Hamburguesa", "Sushi", "Empanada", "Taco", "Helado", "Milanesa", "Asado", "Paella", "Arepa"],
+      paises: ["Argentina", "Brasil", "España", "Francia", "Alemania", "Japón", "China", "México", "Italia", "Canadá"],
+      colores: ["Rojo", "Azul", "Verde", "Amarillo", "Naranja", "Violeta", "Negro", "Blanco", "Rosa", "Gris"],
+      objetos: ["Silla", "Mesa", "Computadora", "Celular", "Lámpara", "Libro", "Televisor", "Reloj", "Bolígrafo", "Auriculares"],
+      cine: ["Titanic", "Avatar", "Matrix", "Gladiador", "Star Wars", "El Padrino", "Avengers", "Jurassic Park", "Inception", "Forrest Gump"],
+      musica: ["Guitarra", "Piano", "Batería", "Rock", "Pop", "Reggaeton", "Rap", "Jazz", "Metal", "Tango"],
+      tecnologia: ["Internet", "Computadora", "Celular", "Redes Sociales", "Robot", "Inteligencia Artificial", "Bitcoin", "Satélite", "Dron", "Programación"]
+    };
+
+    function iniciarJuego() {
+      jugadores = parseInt(document.getElementById("numJugadores").value);
+      const tema = document.getElementById("tema").value;
+
+      if (!jugadores || jugadores < 3) {
+        alert("Ingrese al menos 3 jugadores");
+        return;
+      }
+
+      const lista = palabrasPorTema[tema];
+      palabra = lista[Math.floor(Math.random() * lista.length)];
+
+      impostor = Math.floor(Math.random() * jugadores) + 1;
+      actual = 1;
+
+      document.getElementById("config").style.display = "none";
+      document.getElementById("juego").style.display = "block";
+      document.getElementById("jugadorActual").textContent = actual;
+    }
+
+    function mostrarPalabra() {
+      if (actual === impostor) {
+        document.getElementById("palabra").textContent = "IMPOSTOR";
+      } else {
+        document.getElementById("palabra").textContent = palabra;
+      }
+      document.getElementById("btnVer").style.display = "none";
+      document.getElementById("btnSiguiente").style.display = "inline-block";
+    }
+
+    function siguienteJugador() {
+      document.getElementById("palabra").textContent = "";
+      actual++;
+      if (actual > jugadores) {
+        alert("Todos los jugadores ya vieron su palabra. ¡Que comience el juego!");
+        location.reload();
+        return;
+      }
+      document.getElementById("jugadorActual").textContent = actual;
+      document.getElementById("btnVer").style.display = "inline-block";
+      document.getElementById("btnSiguiente").style.display = "none";
+    }
+  </script>
+</body>
+</html>
