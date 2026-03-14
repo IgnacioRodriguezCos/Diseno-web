@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F1 Circuit Creator</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ── App shell ──────────────────────────────────────────── -->
+<div id="app">
+
+  <!-- Header -->
+  <div id="header">
+
+    <!-- Izquierda: título -->
+    <div class="header-left">
+      <h1 id="app-title">Circuit Creator</h1>
+    </div>
+
+    <!-- Centro: buscador -->
+    <div id="search-wrap">
+      <div class="search-box">
+        <svg class="search-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"/><line x1="17" y1="17" x2="22" y2="22"/>
+        </svg>
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Buscar ciudad, país, circuito…"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button id="search-clear" class="search-clear-btn" aria-label="Limpiar">✕</button>
+      </div>
+      <div id="search-results" class="search-dropdown"></div>
+    </div>
+
+    <div class="header-right">
+      <button id="btn-lang" class="btn-lang" type="button">EN</button>
+      <span id="circuit-badge" class="badge off">● Sin circuito</span>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div id="body">
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+
+      <!-- Stats -->
+      <div class="sec">
+        <div class="sec-title" id="sec-stats-title">📊 Estadísticas</div>
+        <div class="stats-grid">
+          <div class="stat-row">
+            <span class="stat-label" id="lbl-dist">Distancia total</span>
+            <span class="stat-val big" id="s-dist">—</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label" id="lbl-curves">Cantidad de curvas</span>
+            <span class="stat-val" id="s-curves">—</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label" id="lbl-points">Puntos trazados</span>
+            <span class="stat-val" id="s-pts">0</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label" id="lbl-start">Punto de largada</span>
+            <span class="stat-val dim" id="s-start">No definido</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Direction -->
+      <div class="sec">
+        <div class="sec-title" id="sec-direction-title">🔄 Sentido de recorrido</div>
+        <div class="dir-box">
+          <div class="dir-icon" id="dir-icon">—</div>
+          <div>
+            <div class="dir-name" id="dir-name">Sin definir</div>
+            <div class="dir-sub"  id="dir-sub">Agregá al menos 3 puntos</div>
+          </div>
+        </div>
+        <button class="btn btn-gray" id="btn-flip" disabled>⇄ Invertir sentido</button>
+        <button class="btn btn-gray" id="btn-toggle-arrows">➤ Flechas: ON</button>
+
+        <div class="slider-block">
+          <div class="slider-head">
+            <span id="lbl-arrow-speed">Velocidad de flechas</span>
+            <strong id="arrow-speed-val">230</strong>
+          </div>
+          <input id="arrow-speed" type="range" min="20" max="300" step="5" value="230">
+        </div>
+
+        <div class="slider-block">
+          <div class="slider-head">
+            <span id="lbl-arrow-count">Cantidad de flechas</span>
+            <strong id="arrow-count-val">0</strong>
+          </div>
+          <input id="arrow-count" type="range" min="0" max="0" step="1" value="0">
+        </div>
+      </div>
+
+      <!-- Curvas sensitivity -->
+      <div class="sec">
+        <div class="sec-title" id="sec-curves-title">⚙️ Sensibilidad de curvas</div>
+        <div id="lbl-angle-threshold" style="font-size:11px; color:var(--muted); margin-bottom:8px">
+          Ángulo mínimo para considerar una curva:
+        </div>
+        <div class="chips" id="angle-chips">
+          <span class="chip" id="chip-8" data-val="8">Muy sensible</span>
+          <span class="chip active" id="chip-15" data-val="15">Normal</span>
+          <span class="chip" id="chip-25" data-val="25">Chicanas</span>
+          <span class="chip" id="chip-40" data-val="40">Solo horquillas</span>
+        </div>
+      </div>
+
+      <!-- Waypoints -->
+      <div class="sec" style="flex:1">
+        <div class="sec-title" id="sec-points-title">📍 Puntos del circuito</div>
+        <div id="lbl-point-help" style="font-size:11px; color:var(--muted); margin-bottom:8px">
+          Hacé clic en un punto para establecerlo como largada
+        </div>
+        <div id="wpt-list">
+          <div class="wpt-empty">Hacé clic en el mapa para comenzar</div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="sec">
+        <div class="sec-title" id="sec-controls-title">🎮 Controles</div>
+        <button class="btn btn-gray"   id="btn-undo"  disabled>↩ Deshacer último punto</button>
+        <button class="btn btn-danger" id="btn-clear" disabled>✕ Limpiar todo</button>
+      </div>
+
+      <!-- Share / Seed -->
+      <div class="sec">
+        <div class="sec-title" id="sec-share-title">🔗 Compartir circuito</div>
+        <div class="seed-box">
+          <textarea id="seed-input" class="seed-input" rows="3" placeholder="Pegá una semilla para cargar un circuito"></textarea>
+          <div class="seed-actions">
+            <button class="btn btn-gray" id="btn-seed-generate">Generar semilla</button>
+            <button class="btn btn-gray" id="btn-seed-copy">Copiar</button>
+            <button class="btn btn-red" id="btn-seed-load">Cargar semilla</button>
+          </div>
+          <div id="seed-status" class="seed-status"></div>
+        </div>
+      </div>
+
+      <!-- Instructions -->
+      <div class="sec">
+        <div class="sec-title" id="sec-instructions-title">ℹ️ Instrucciones</div>
+        <div class="hint-box">
+          <p>
+            <strong id="ins-map-click-strong">Clic en el mapa</strong> <span id="ins-map-click-text">→ Agregar punto al circuito</span><br>
+            <strong id="ins-drag-strong">Clic y arrastrar en marcador</strong> <span id="ins-drag-text">→ Mover punto</span><br>
+            <strong id="ins-dbl-strong">Doble clic en marcador</strong> <span id="ins-dbl-text">→ Establecer como largada</span><br>
+            <strong id="ins-flip-strong">Invertir sentido</strong> <span id="ins-flip-text">→ Cambiar dirección de marcha</span><br>
+            <span id="ins-close-text">El circuito se cierra automáticamente con 3+ puntos</span>
+          </p>
+        </div>
+      </div>
+
+    </div><!-- /sidebar -->
+
+    <!-- Handle de resize del sidebar -->
+    <div id="sidebar-resizer"></div>
+
+    <!-- Map -->
+    <div id="map-wrap">
+      <div id="map"></div>
+    </div>
+
+  </div><!-- /body -->
+</div><!-- /app -->
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
